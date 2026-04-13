@@ -1,13 +1,14 @@
 import Image from "next/image"
 const heroImages = [
-  { src: "/IMG_5895 (1).jpeg", alt: "Cartagena de Indias" },
-  { src: "/61916232-3880-432C-85D4-664486031EA8 (1).png", alt: "Isla paradisiaca en el Caribe" },
-  { src: "/IMG_9878 (1).jpeg", alt: "Bora Bora Beach Club" },
+  { src: "/hero-islas-del-rosario.jpeg", alt: "Turistas en lancha deportiva rumbo a las Islas del Rosario, Cartagena de Indias" },
+  { src: "/hero-isla-paradisiaca.png", alt: "Isla paradisiaca de aguas turquesas en el Caribe colombiano" },
+  { src: "/hero-bora-bora-beach-club.jpeg", alt: "Bora Bora Beach Club, el mejor beach club de Cartagena" },
 ] as const
 
 export function Hero() {
   return (
     <section className="relative w-full">
+      <h1 className="sr-only">Bonita Cartagena — Tours y Pasadias en Cartagena de Indias</h1>
       <div className="relative h-72 md:h-[500px] lg:h-[600px] w-full overflow-hidden">
         <div className="absolute inset-0 grid grid-cols-3">
           {heroImages.map((image, index) => (
@@ -28,7 +29,7 @@ export function Hero() {
 
         <div className="absolute -bottom-8 md:-bottom-16 left-1/2 -translate-x-1/2 z-10">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20bonita%20cartagena-uheBKAr9TInzG1gOWjSgzYgcU3xzMG.png"
+            src="/logo-bonita-cartagena.png"
             alt="Bonita Cartagena Logo"
             width={288}
             height={288}

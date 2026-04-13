@@ -10,46 +10,46 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp"
 
 const beforeToursImages = [
   {
-    src: "/IMG_9943 (1).jpeg",
-    alt: "Playa en Cartagena",
+    src: "/playa-cartagena-tropical.jpeg",
+    alt: "Playa tropical de aguas cristalinas en Cartagena de Indias",
   },
   {
-    src: "/IMG_5885.jpeg",
-    alt: "Experiencia en Cartagena",
+    src: "/experiencia-turistica-cartagena.jpeg",
+    alt: "Turistas disfrutando una experiencia inolvidable en el Caribe colombiano",
   },
   {
-    src: "/017B7A3B-B756-4983-9878-78D8CD82C6BF.png",
-    alt: "Palenqueras tradicionales en Cartagena",
+    src: "/palenqueras-tradicionales-cartagena.png",
+    alt: "Palenqueras con trajes tradicionales y frutas tipicas en el centro historico de Cartagena",
   },
 ] as const
 
 const afterToursImages = [
   {
-    src: "/00FAE832-0BE7-43EE-B2F0-7283AC98AD6B (1).png",
-    alt: "Cartagena cultural",
+    src: "/cartagena-cultura-caribe.png",
+    alt: "Cultura y arte del Caribe colombiano en Cartagena de Indias",
   },
   {
-    src: "/81B641B0-501C-41B5-8E94-C09EBDAAAD7A (1).png",
-    alt: "Vista iconica de Cartagena",
+    src: "/vista-iconica-cartagena.png",
+    alt: "Vista iconica de la muralla y bahia de Cartagena de Indias",
   },
   {
-    src: "/IMG_9942 (1).jpeg",
-    alt: "Experiencia turistica en Cartagena",
+    src: "/experiencia-cartagena-2.jpeg",
+    alt: "Visitantes explorando los atractivos turisticos de Cartagena",
   },
 ] as const
 
 const afterVideoImages = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5ACAE965-C2BA-45C8-8093-48B61A0A4685-KKgc3lPPfyxvF6kEiDY4xjVqj82hW3.jpeg",
-    alt: "Grupo haciendo snorkel en las islas",
+    src: "/snorkel-islas-cartagena.jpeg",
+    alt: "Grupo de turistas haciendo snorkel en las aguas turquesas de las Islas del Rosario",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/66450248-ADE4-4458-8D7C-F8A4F49276CE-wZh7PS3LX0cEuiMCj8Zmr8pg39GJKN.jpeg",
-    alt: "Familia disfrutando del Oceanario",
+    src: "/familia-oceanario-cartagena.jpeg",
+    alt: "Familia disfrutando del Oceanario en las Islas del Rosario, Cartagena",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DEC8BEEB-92AF-4A1A-BAA0-E91529568A8B-9RUoE8cIJo9AmLjPbDPrEKzMyruT75.jpeg",
-    alt: "Tour por los murales de Getsemani",
+    src: "/tour-murales-getsemani.jpeg",
+    alt: "Tour por los famosos murales del barrio Getsemani, Cartagena",
   },
 ] as const
 

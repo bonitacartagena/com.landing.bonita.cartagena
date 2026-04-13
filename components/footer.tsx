@@ -100,7 +100,7 @@ export function Footer() {
         {/* Credits */}
         <div className="text-center pt-8 mt-8 border-t border-border">
           <p className="text-muted-foreground/60 text-xs">
-            2024 Bonita Cartagena. Todos los derechos reservados.
+            {new Date().getFullYear()} Bonita Cartagena. Todos los derechos reservados.
           </p>
         </div>
       </div>

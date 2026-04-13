@@ -5,7 +5,7 @@ const tours = [
     id: "5islas",
     title: "5 ISLAS VIP",
     description: "Vive una experiencia unica y completa con nuestro tour 5 Islas VIP! Realiza las actividades mas geniales e increibles durante tu viaje en las hermosas Islas del Rosario.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-21%20at%2011.10.17%20AM-GQ16lAynhygnKVhJskOZm6W483HPkX.jpeg",
+    image: "/tour-5-islas-vip.jpeg",
     duration: "Tour de dia completo",
     includes: [
       "Recogida en zona hotelera",
@@ -24,7 +24,7 @@ const tours = [
     id: "chiva",
     title: "CHIVA RUMBERA",
     description: "Visita los lugares mas emblematicos de Cartagena mientras te la pasas genial a bordo de nuestra increible chiva rumbera. Recorrido panoramico por Bocagrande, Laguito y la Bahia.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-21%20at%2011.10.17%20AM%20%281%29-Rdp8ifaZUbMyvIAbbCjcOqMY4fNdOk.jpeg",
+    image: "/tour-chiva-rumbera.jpeg",
     duration: "2 horas (7-9 PM o 9-11 PM)",
     includes: [
       "Recorrido en Chiva Rumbera",
@@ -42,7 +42,7 @@ const tours = [
     id: "getsemani",
     title: "TOUR GETSEMANI",
     description: "Recorre Getsemani, el barrio mas colorido de Cartagena y descubre su increible historia. Reconocido como el 4to mejor barrio del mundo por la revista Forbes.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-21%20at%2011.11.55%20AM-gyg0EnbNSUcdSVpnW4DIW7lMpoGhrH.jpeg",
+    image: "/tour-getsemani.jpeg",
     duration: "2-3 horas",
     includes: [
       "Guia local profesional",
@@ -59,7 +59,7 @@ const tours = [
     id: "borabora",
     title: "BORA BORA BEACH CLUB",
     description: "Te mereces algo unico! Visita el mejor beach club de Cartagena y el Caribe. BORA BORA te espera con las mejores instalaciones y vistas al mar.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-21%20at%2011.10.17%20AM%20%282%29-SkLxUqwxZ6Hf4A7eStyH6SkizC7fPb.jpeg",
+    image: "/tour-bora-bora-beach-club.jpeg",
     duration: "Tour de dia completo",
     includes: [
       "Transporte en lancha deportiva",
@@ -70,9 +70,43 @@ const tours = [
   }
 ]
 
+const touristTripSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Tours Destacados — Bonita Cartagena',
+  itemListElement: tours.map((tour, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'TouristTrip',
+      name: tour.title,
+      description: tour.description,
+      url: `https://bonitacartagena.com/#${tour.id}`,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: 'Bonita Cartagena',
+        telephone: '+573113410983',
+      },
+      touristType: 'Leisure',
+      itinerary: {
+        '@type': 'ItemList',
+        itemListElement: tour.includes.map((item, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: item,
+        })),
+      },
+    },
+  })),
+}
+
 export function ToursSection() {
   return (
     <section id="tours" className="w-full py-8 md:py-16 px-4 md:px-8 lg:px-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripSchema) }}
+      />
       <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">
         Tours Destacados
       </h2>

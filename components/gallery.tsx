@@ -4,28 +4,28 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9880-ooCl3SSoVLM3AtaocymMElMaF2wibf.jpeg",
-    alt: "Mariposas amarillas - Arte de Gabriel Garcia Marquez",
+    src: "/galeria-mariposas-garcia-marquez.jpeg",
+    alt: "Mariposas amarillas inspiradas en el arte de Gabriel Garcia Marquez en Cartagena",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/81B641B0-501C-41B5-8E94-C09EBDAAAD7A-DEW0VF9bgOxqnnLJQA4zKcIrJLlnjq.png",
-    alt: "Castillo San Felipe de Barajas - Vista aerea",
+    src: "/castillo-san-felipe-aerea.png",
+    alt: "Vista aerea del Castillo San Felipe de Barajas, fortaleza historica de Cartagena de Indias",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9925-k7uGipdIDTFU17j99YrzmsMMYbel8a.jpeg",
-    alt: "Escultura de la palenquera - Arte de Cartagena",
+    src: "/escultura-palenquera-cartagena.jpeg",
+    alt: "Escultura de palenquera, icono cultural del arte urbano de Cartagena",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/017B7A3B-B756-4983-9878-78D8CD82C6BF-WpR3qGT9YXbV7jPQgY1T65ZHsnrTMB.png",
-    alt: "Flamingos en el manglar",
+    src: "/flamingos-manglar-cartagena.png",
+    alt: "Flamingos rosados en el manglar de las Islas del Rosario, Cartagena",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9943-19dkocLnYBqOrT0aMjA1K7tdOswP6I.jpeg",
-    alt: "Paseo en bote por aguas cristalinas",
+    src: "/bote-aguas-cristalinas-cartagena.jpeg",
+    alt: "Paseo en bote deportivo por las aguas cristalinas del Caribe colombiano",
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/00FAE832-0BE7-43EE-B2F0-7283AC98AD6B-v6hceX6Hum9dPBAVBLXe54tf8Ql1VS.png",
-    alt: "Nado con delfines",
+    src: "/nado-delfines-cartagena.png",
+    alt: "Experiencia de nado con delfines en Cartagena de Indias",
   },
 ]
 
