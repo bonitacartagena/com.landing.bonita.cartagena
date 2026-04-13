@@ -13,11 +13,11 @@ interface ImageStripProps {
 export function ImageStrip({ images, className = "" }: ImageStripProps) {
   return (
     <section className={`w-full ${className}`.trim()}>
-      <div className="grid grid-cols-1 md:grid-cols-3">
+      <div className="grid grid-cols-3">
         {images.map((image) => (
           <div
             key={`${image.src}-${image.alt}`}
-            className="group relative h-80 overflow-hidden md:h-[28rem] lg:h-[34rem]"
+            className="group relative h-72 overflow-hidden md:h-[28rem] lg:h-[34rem]"
           >
             <Image
               src={image.src}

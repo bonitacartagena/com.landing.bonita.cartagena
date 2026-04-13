@@ -1,3 +1,7 @@
+"use client"
+
+import { useEffect, useRef } from "react"
+
 import { TourCard } from "./tour-card"
 
 const tours = [
@@ -43,10 +47,10 @@ const tours = [
     title: "TOUR GETSEMANI",
     description: "Recorre Getsemani, el barrio mas colorido de Cartagena y descubre su increible historia. Reconocido como el 4to mejor barrio del mundo por la revista Forbes.",
     image: "/tour-getsemani.jpeg",
-    duration: "2-3 horas",
+    duration: "1-2 horas",
     includes: [
       "Guia local profesional",
-      "Murales artisticos",
+      "Murales artisticos 📷🎨",
       "Calle de la Serpiente",
       "Plaza de la Trinidad",
       "Calle Lomba",
@@ -60,10 +64,10 @@ const tours = [
     title: "BORA BORA BEACH CLUB",
     description: "Te mereces algo unico! Visita el mejor beach club de Cartagena y el Caribe. BORA BORA te espera con las mejores instalaciones y vistas al mar.",
     image: "/tour-bora-bora-beach-club.jpeg",
-    duration: "Tour de dia completo",
+    duration: "Hasta las 3:00 PM",
     includes: [
       "Transporte en lancha deportiva",
-      "Coctel de bienvenida",
+      "Coctel de bienvenida 🍹🍸",
       "Cama de playa o asoleadora",
       "Almuerzo a la carta (12+ opciones)"
     ]
@@ -101,6 +105,62 @@ const touristTripSchema = {
 }
 
 export function ToursSection() {
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const carousel = carouselRef.current
+
+    if (!carousel) {
+      return
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 767px)")
+
+    const startAutoplay = () => {
+      if (!mediaQuery.matches) {
+        return () => { }
+      }
+
+      const interval = window.setInterval(() => {
+        const cards = Array.from(carousel.children) as HTMLElement[]
+
+        if (cards.length === 0) {
+          return
+        }
+
+        const currentIndex = cards.findIndex((card) => {
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2
+          const viewportCenter = carousel.scrollLeft + carousel.clientWidth / 2
+
+          return Math.abs(cardCenter - viewportCenter) < card.offsetWidth / 2
+        })
+
+        const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % cards.length : 0
+
+        carousel.scrollTo({
+          left: cards[nextIndex].offsetLeft,
+          behavior: "smooth",
+        })
+      }, 3000)
+
+      return () => window.clearInterval(interval)
+    }
+
+    let cleanup = startAutoplay()
+
+    const handleChange = () => {
+      cleanup()
+      cleanup = startAutoplay()
+    }
+
+    mediaQuery.addEventListener("change", handleChange)
+
+    return () => {
+      cleanup()
+      mediaQuery.removeEventListener("change", handleChange)
+    }
+  }, [])
+
   return (
     <section id="tours" className="w-full py-8 md:py-16 px-4 md:px-8 lg:px-16">
       <script
@@ -110,9 +170,14 @@ export function ToursSection() {
       <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">
         Tours Destacados
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+      <div
+        ref={carouselRef}
+        className="no-scrollbar mx-auto flex max-w-7xl snap-x snap-mandatory gap-6 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible lg:grid-cols-4"
+      >
         {tours.map((tour) => (
-          <TourCard key={tour.id} {...tour} />
+          <div key={tour.id} className="min-w-[85vw] snap-center sm:min-w-[420px] md:min-w-0 md:snap-none">
+            <TourCard {...tour} />
+          </div>
         ))}
       </div>
     </section>

@@ -1,6 +1,16 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Star } from "lucide-react"
+
+import {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const testimonials = [
   {
@@ -34,37 +44,70 @@ const testimonials = [
 ]
 
 export function Testimonials() {
+  const [api, setApi] = useState<CarouselApi>()
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    const interval = window.setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext()
+        return
+      }
+
+      api.scrollTo(0)
+    }, 5000)
+
+    return () => window.clearInterval(interval)
+  }, [api])
+
   return (
     <section className="w-full py-8 md:py-16 px-4 md:px-8 lg:px-16 bg-secondary/30">
       <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-6 md:mb-12">
         Lo Que Dicen Nuestros Viajeros
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "start",
+          loop: false,
+        }}
+        className="mx-auto max-w-7xl"
+      >
+        <CarouselContent className="-ml-4">
         {testimonials.map((testimonial, index) => (
-          <div 
+          <CarouselItem
             key={index}
-            className="bg-card backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-border/50 hover:border-amber-400/30 transition-colors"
+            className="pl-4 basis-full md:basis-1/2 xl:basis-1/3"
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-lg">
-                {testimonial.avatar}
+            <div className="h-full bg-card backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-border/50 hover:border-amber-400/30 transition-colors">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-lg">
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-muted-foreground text-sm">{testimonial.location}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-muted-foreground text-sm">{testimonial.location}</p>
+              <div className="flex gap-1 mb-3">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                ))}
               </div>
+              <p className="text-foreground/90 text-sm leading-relaxed">
+                {`"${testimonial.text}"`}
+              </p>
             </div>
-            <div className="flex gap-1 mb-3">
-              {[...Array(testimonial.rating)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-              ))}
-            </div>
-            <p className="text-foreground/90 text-sm leading-relaxed">
-              {`"${testimonial.text}"`}
-            </p>
-          </div>
+          </CarouselItem>
         ))}
-      </div>
+        </CarouselContent>
+
+        <CarouselPrevious className="left-3 top-1/2 z-10 size-11 -translate-y-1/2 border-white/15 bg-background/85 text-foreground backdrop-blur disabled:opacity-35" />
+        <CarouselNext className="right-3 top-1/2 z-10 size-11 -translate-y-1/2 border-white/15 bg-background/85 text-foreground backdrop-blur disabled:opacity-35" />
+      </Carousel>
     </section>
   )
 }
