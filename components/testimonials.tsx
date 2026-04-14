@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     name: "Carlos Rodriguez",
-    location: "Medellin, Colombia", 
+    location: "Medellin, Colombia",
     rating: 5,
     text: "El volcan del Totumo fue una experiencia unica. El lodo deja la piel increible y el equipo de Bonita Cartagena nos hizo sentir muy bien atendidos.",
     avatar: "C"
@@ -43,14 +43,14 @@ const testimonials = [
   },
   {
     name: "Maiyah",
-    location: "Traveler Review",
+    location: "Atlanta, Georgia",
     rating: 5,
     text: "Good afternoon, I just wanted to thank you for everything... We had an amazing time on the tours and the trips to the islands were so much fun. See you next time 🫶🏼 We loved Cartagena🇨🇴",
     avatar: "M"
   },
   {
     name: "Cinthia de Souza",
-    location: "Traveler Review",
+    location: "São Paulo",
     rating: 5,
     text: "Muito obrigado pela atenção, divertimo-nos imenso nos passeios; o passeio VIP das 5 ilhas é o máximo 🤗🥳",
     avatar: "C"
@@ -91,32 +91,32 @@ export function Testimonials() {
         className="mx-auto max-w-7xl"
       >
         <CarouselContent className="-ml-4">
-        {testimonials.map((testimonial, index) => (
-          <CarouselItem
-            key={index}
-            className="pl-4 basis-full md:basis-1/2 xl:basis-1/3"
-          >
-            <div className="h-full bg-card backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-border/50 hover:border-amber-400/30 transition-colors">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-lg">
-                  {testimonial.avatar}
+          {testimonials.map((testimonial, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-4 basis-full md:basis-1/2 xl:basis-1/3"
+            >
+              <div className="h-full bg-card backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-border/50 hover:border-amber-400/30 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center text-white font-bold text-lg">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-muted-foreground text-sm">{testimonial.location}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-sm">{testimonial.location}</p>
+                <div className="flex gap-1 mb-3">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
+                <p className="text-foreground/90 text-sm leading-relaxed">
+                  {`"${testimonial.text}"`}
+                </p>
               </div>
-              <div className="flex gap-1 mb-3">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <p className="text-foreground/90 text-sm leading-relaxed">
-                {`"${testimonial.text}"`}
-              </p>
-            </div>
-          </CarouselItem>
-        ))}
+            </CarouselItem>
+          ))}
         </CarouselContent>
 
         <CarouselPrevious className="left-3 top-1/2 z-10 size-11 -translate-y-1/2 border-white/15 bg-background/85 text-foreground backdrop-blur disabled:opacity-35" />

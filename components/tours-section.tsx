@@ -18,7 +18,7 @@ const tours = [
     title: "5 ISLAS VIP",
     description: "Vive una experiencia unica y completa con nuestro tour 5 Islas VIP! Realiza las actividades mas geniales e increibles durante tu viaje en las hermosas Islas del Rosario.",
     image: "/tour-5-islas-vip.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Recogida en zona hotelera",
       "Guia abordo",
@@ -85,7 +85,7 @@ const tours = [
     title: "VOLCAN DEL TOTUMO",
     description: "Disfruta la tranquilidad de sumergirte en este increíble spa natural, ¡El gran volcan del totumo te espera!",
     image: "/volcan_totumo.JPG.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Recogida en Hotel",
       "Traslado via terrestre",
@@ -116,7 +116,7 @@ const tours = [
     title: "CITY TOUR CARTAGENA",
     description: "Recorre los lugares mas emblemáticos de la ciudad y vive la historia detras de la Hermosa Cartagena",
     image: "/city_tour_cartagena.JPG.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Recogida en el hotel",
       "Recorrido Bocagrande, laguito y castillo grande",
@@ -135,7 +135,7 @@ const tours = [
     title: "IBBIZA",
     description: "Un paraíso de aguas cristalinas en las islas del rosario que te hará vivir un día de confort, tranquilidad y aventuras. ¡Ibbiza te espera!",
     image: "/ibbiza_tour.JPG.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Transporte en bote deportivo",
       "Cóctel de bienvenida",
@@ -148,7 +148,7 @@ const tours = [
     title: "ISLA PALMA",
     description: "Te mereces lo mejor, ven y vive una experiencia única, en la isla mas exclusiva que encontraras en el caribe",
     image: "/isla_palma.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Recogida en el hotel",
       "Aperitivo o snack",
@@ -165,7 +165,7 @@ const tours = [
     title: "LUXURY",
     description: "Vive un grandioso día de playa en islas del rosario, disfruta de este atractivo lugar con aguas cristalinas",
     image: "/luxury.JPG.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Transporte en bote deportivo",
       "Almuerzo típico caribeño",
@@ -178,7 +178,7 @@ const tours = [
     title: "OCEANARIO",
     description: "Recorre las Islas del rosario, contempla sus hermosos paisajes, visita el oceanario y descubre la variedad marina que el caribe tiene para ti!",
     image: "/oceanario.JPG.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Recogida en Hotel",
       "Recorrido islas del rosario",
@@ -192,7 +192,7 @@ const tours = [
     title: "ROSARIO DEL MAR",
     description: "Un rincón paradisíaco perfecto para desconectarte de la rutina, rodeado de aguas cristalinas y la mejor vibra que tu cuerpo necesita!",
     image: "/rosario_mar.jpeg",
-    duration: "Tour de dia completo",
+    duration: "",
     includes: [
       "Transporte en bote deportivo",
       "Cóctel de bienvenida",

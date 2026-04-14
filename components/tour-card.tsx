@@ -11,7 +11,7 @@ interface TourCardProps {
   title: string
   description: string
   image: string
-  duration: string
+  duration?: string
   includes: string[]
 }
 
@@ -41,10 +41,12 @@ export function TourCard({ id, title, description, image, duration, includes }: 
 
       {/* Tour Details */}
       <div className="p-4 md:p-5 space-y-3">
-        <div className="flex items-center gap-2 text-teal-400">
-          <Clock className="w-4 h-4" />
-          <span className="text-xs font-medium">{duration}</span>
-        </div>
+        {duration ? (
+          <div className="flex items-center gap-2 text-teal-400">
+            <Clock className="w-4 h-4" />
+            <span className="text-xs font-medium">{duration}</span>
+          </div>
+        ) : null}
 
         <p className="text-muted-foreground leading-relaxed text-xs md:text-sm line-clamp-3">{description}</p>
 
