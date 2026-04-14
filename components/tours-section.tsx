@@ -1,7 +1,15 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useState } from "react"
 
+import {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { TourCard } from "./tour-card"
 
 const tours = [
@@ -71,6 +79,126 @@ const tours = [
       "Cama de playa o asoleadora",
       "Almuerzo a la carta (12+ opciones)"
     ]
+  },
+  {
+    id: "volcan-totumo",
+    title: "VOLCAN DEL TOTUMO",
+    description: "Disfruta la tranquilidad de sumergirte en este increíble spa natural, ¡El gran volcan del totumo te espera!",
+    image: "/volcan_totumo.JPG.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Recogida en Hotel",
+      "Traslado via terrestre",
+      "Baño Volcán del Totumo",
+      "Visita a nuestro hotel",
+      "Coctel de bienvenida",
+      "Almuerzo Típico Caribeño",
+      "Servicio de Piscina",
+      "Acceso a la playa",
+      "Retorno al hotel 3pm"
+    ]
+  },
+  {
+    id: "atardecer-sibarita",
+    title: "ATARDECER SIBARITA MASTER",
+    description: "Disfruta tu aventura con el mágico atardecer por la bahía de Cartagena en el exclusivo sibarita Master",
+    image: "/atardecer.JPG.jpeg",
+    duration: "2 horas (Salida 5:00 PM)",
+    includes: [
+      "Salida - 5:00 PM",
+      "Recorrido por 2 horas",
+      "Barra libre en licores",
+      "Menú de bebidas premium y pasabocas a bordo con costo"
+    ]
+  },
+  {
+    id: "city-tour",
+    title: "CITY TOUR CARTAGENA",
+    description: "Recorre los lugares mas emblemáticos de la ciudad y vive la historia detras de la Hermosa Cartagena",
+    image: "/city_tour_cartagena.JPG.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Recogida en el hotel",
+      "Recorrido Bocagrande, laguito y castillo grande",
+      "Visita Bahía de Cartagena",
+      "Torre del Reloj",
+      "India Catalina",
+      "Muelle de los Pegazos",
+      "Castillo de San Felipe",
+      "Letras de CARTAGENA",
+      "Visita a las botas viejas",
+      "Retorno al Hotel"
+    ]
+  },
+  {
+    id: "ibbiza",
+    title: "IBBIZA",
+    description: "Un paraíso de aguas cristalinas en las islas del rosario que te hará vivir un día de confort, tranquilidad y aventuras. ¡Ibbiza te espera!",
+    image: "/ibbiza_tour.JPG.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Transporte en bote deportivo",
+      "Cóctel de bienvenida",
+      "Almuerzo típico caribeño",
+      "Uso de instalaciones"
+    ]
+  },
+  {
+    id: "isla-palma",
+    title: "ISLA PALMA",
+    description: "Te mereces lo mejor, ven y vive una experiencia única, en la isla mas exclusiva que encontraras en el caribe",
+    image: "/isla_palma.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Recogida en el hotel",
+      "Aperitivo o snack",
+      "Transporte en bote",
+      "Cóctel de bienvenida",
+      "Almuerzo tipo buffet",
+      "Uso de instalaciones",
+      "Actividades en la playa",
+      "Retorno al muelle"
+    ]
+  },
+  {
+    id: "luxury",
+    title: "LUXURY",
+    description: "Vive un grandioso día de playa en islas del rosario, disfruta de este atractivo lugar con aguas cristalinas",
+    image: "/luxury.JPG.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Transporte en bote deportivo",
+      "Almuerzo típico caribeño",
+      "Open bar",
+      "Uso de instalaciones"
+    ]
+  },
+  {
+    id: "oceanario",
+    title: "OCEANARIO",
+    description: "Recorre las Islas del rosario, contempla sus hermosos paisajes, visita el oceanario y descubre la variedad marina que el caribe tiene para ti!",
+    image: "/oceanario.JPG.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Recogida en Hotel",
+      "Recorrido islas del rosario",
+      "Visita al Oceanario",
+      "Almuerzo Típico Caribeño",
+      "Retorno al Hotel"
+    ]
+  },
+  {
+    id: "rosario-del-mar",
+    title: "ROSARIO DEL MAR",
+    description: "Un rincón paradisíaco perfecto para desconectarte de la rutina, rodeado de aguas cristalinas y la mejor vibra que tu cuerpo necesita!",
+    image: "/rosario_mar.jpeg",
+    duration: "Tour de dia completo",
+    includes: [
+      "Transporte en bote deportivo",
+      "Cóctel de bienvenida",
+      "Almuerzo típico caribeño",
+      "Uso de instalaciones"
+    ]
   }
 ]
 
@@ -105,61 +233,24 @@ const touristTripSchema = {
 }
 
 export function ToursSection() {
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const [api, setApi] = useState<CarouselApi>()
 
   useEffect(() => {
-    const carousel = carouselRef.current
-
-    if (!carousel) {
+    if (!api) {
       return
     }
 
-    const mediaQuery = window.matchMedia("(max-width: 767px)")
-
-    const startAutoplay = () => {
-      if (!mediaQuery.matches) {
-        return () => { }
+    const interval = window.setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext()
+        return
       }
 
-      const interval = window.setInterval(() => {
-        const cards = Array.from(carousel.children) as HTMLElement[]
+      api.scrollTo(0)
+    }, 3000)
 
-        if (cards.length === 0) {
-          return
-        }
-
-        const currentIndex = cards.findIndex((card) => {
-          const cardCenter = card.offsetLeft + card.offsetWidth / 2
-          const viewportCenter = carousel.scrollLeft + carousel.clientWidth / 2
-
-          return Math.abs(cardCenter - viewportCenter) < card.offsetWidth / 2
-        })
-
-        const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % cards.length : 0
-
-        carousel.scrollTo({
-          left: cards[nextIndex].offsetLeft,
-          behavior: "smooth",
-        })
-      }, 3000)
-
-      return () => window.clearInterval(interval)
-    }
-
-    let cleanup = startAutoplay()
-
-    const handleChange = () => {
-      cleanup()
-      cleanup = startAutoplay()
-    }
-
-    mediaQuery.addEventListener("change", handleChange)
-
-    return () => {
-      cleanup()
-      mediaQuery.removeEventListener("change", handleChange)
-    }
-  }, [])
+    return () => window.clearInterval(interval)
+  }, [api])
 
   return (
     <section id="tours" className="w-full py-8 md:py-16 px-4 md:px-8 lg:px-16">
@@ -170,16 +261,28 @@ export function ToursSection() {
       <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">
         Tours Destacados
       </h2>
-      <div
-        ref={carouselRef}
-        className="no-scrollbar mx-auto flex max-w-7xl snap-x snap-mandatory gap-6 overflow-x-auto pb-2 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible lg:grid-cols-4"
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "start",
+          loop: false,
+        }}
+        className="mx-auto max-w-7xl"
       >
-        {tours.map((tour) => (
-          <div key={tour.id} className="min-w-[85vw] snap-center sm:min-w-[420px] md:min-w-0 md:snap-none">
-            <TourCard {...tour} />
-          </div>
-        ))}
-      </div>
+        <CarouselContent className="-ml-4">
+          {tours.map((tour) => (
+            <CarouselItem
+              key={tour.id}
+              className="pl-4 basis-[85vw] sm:basis-[60%] md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            >
+              <TourCard {...tour} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        <CarouselPrevious className="left-3 top-1/2 z-10 size-11 -translate-y-1/2 border-white/15 bg-background/85 text-foreground backdrop-blur disabled:opacity-35" />
+        <CarouselNext className="right-3 top-1/2 z-10 size-11 -translate-y-1/2 border-white/15 bg-background/85 text-foreground backdrop-blur disabled:opacity-35" />
+      </Carousel>
     </section>
   )
 }
