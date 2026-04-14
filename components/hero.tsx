@@ -38,8 +38,10 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="text-center mt-14 md:mt-20">
-        <span className="text-muted-foreground text-md md:text-lg">RNT: 232342</span>
+      <div className="mt-28 flex justify-center md:mt-36">
+        <span className="text-center text-md font-bold text-muted-foreground md:text-lg">
+          RNT: 232342
+        </span>
       </div>
     </section>
   )
