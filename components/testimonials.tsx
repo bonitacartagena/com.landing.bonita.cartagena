@@ -40,6 +40,20 @@ const testimonials = [
     rating: 5,
     text: "Las islas son un paraiso! El servicio fue de primera desde la reserva por WhatsApp hasta el regreso. Volvere pronto!",
     avatar: "J"
+  },
+  {
+    name: "Maiyah",
+    location: "Traveler Review",
+    rating: 5,
+    text: "Good afternoon, I just wanted to thank you for everything... We had an amazing time on the tours and the trips to the islands were so much fun. See you next time 🫶🏼 We loved Cartagena🇨🇴",
+    avatar: "M"
+  },
+  {
+    name: "Cinthia de Souza",
+    location: "Traveler Review",
+    rating: 5,
+    text: "Muito obrigado pela atenção, divertimo-nos imenso nos passeios; o passeio VIP das 5 ilhas é o máximo 🤗🥳",
+    avatar: "C"
   }
 ]
 
