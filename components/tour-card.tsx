@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Ship, UtensilsCrossed, Waves, Clock, Check, ChevronDown, ChevronUp } from "lucide-react"
+import { Clock, Check, ChevronDown, ChevronUp } from "lucide-react"
 import { useState } from "react"
 
 const WHATSAPP_NUMBER = "573113410983"
@@ -57,10 +57,7 @@ export function TourCard({ id, title, description, image, duration, includes }: 
           <ul className="space-y-1">
             {visibleIncludes.map((item, index) => (
               <li key={index} className="flex items-center gap-2 text-xs text-muted-foreground">
-                {index === 0 && <Ship className="w-3 h-3 text-teal-400 flex-shrink-0" />}
-                {index === 1 && <UtensilsCrossed className="w-3 h-3 text-teal-400 flex-shrink-0" />}
-                {index === 2 && <Waves className="w-3 h-3 text-teal-400 flex-shrink-0" />}
-                {index > 2 && <Check className="w-3 h-3 text-teal-400 flex-shrink-0" />}
+                <Check className="w-3 h-3 text-teal-400 flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
