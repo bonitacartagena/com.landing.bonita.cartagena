@@ -33,14 +33,13 @@ export function TourCard({ id, title, description, image, duration, includes }: 
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="w-full h-auto"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-        <h3 className="absolute bottom-4 left-4 right-4 text-lg md:text-xl font-bold text-foreground tracking-wide">
-          {title}
-        </h3>
       </div>
 
       {/* Tour Details */}
       <div className="p-4 md:p-5 space-y-3">
+        <h3 className="text-lg md:text-xl font-bold text-foreground tracking-wide">
+          {title}
+        </h3>
         {duration ? (
           <div className="flex items-center gap-2 text-teal-400">
             <Clock className="w-4 h-4" />

@@ -11,51 +11,25 @@ export function ShortsVideoSection() {
     const iframe = iframeRef.current
     if (!iframe) return
 
-    const command = (func: string) => {
+    const play = () => {
       iframe.contentWindow?.postMessage(
-        JSON.stringify({
-          event: "command",
-          func,
-          args: [],
-        }),
+        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
         "https://www.youtube.com"
       )
     }
 
-    const ensurePlayback = () => {
-      command("mute")
-      command("playVideo")
-    }
+    // Un único retry al cargar, por si el player aún no estaba listo
+    const handleLoad = () => window.setTimeout(play, 500)
 
-    const handleLoad = () => {
-      ensurePlayback()
+    // Reproducir cuando el usuario vuelve a la pestaña
+    const handleVisibility = () => { if (!document.hidden) play() }
 
-      // iOS can ignore the first autoplay attempt, so retry briefly.
-      const retryTimes = [250, 1000, 2000]
-      retryTimes.forEach((delay) => {
-        window.setTimeout(ensurePlayback, delay)
-      })
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          ensurePlayback()
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    observer.observe(iframe)
     iframe.addEventListener("load", handleLoad)
-    document.addEventListener("visibilitychange", ensurePlayback)
-    window.addEventListener("pageshow", ensurePlayback)
+    document.addEventListener("visibilitychange", handleVisibility)
 
     return () => {
-      observer.disconnect()
       iframe.removeEventListener("load", handleLoad)
-      document.removeEventListener("visibilitychange", ensurePlayback)
-      window.removeEventListener("pageshow", ensurePlayback)
+      document.removeEventListener("visibilitychange", handleVisibility)
     }
   }, [])
 
