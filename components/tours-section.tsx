@@ -18,7 +18,7 @@ const tours = [
     id: "5islas",
     title: "5 ISLAS VIP",
     description: "Vive una experiencia unica y completa con nuestro tour 5 Islas VIP! Realiza las actividades mas geniales e increibles durante tu viaje en las hermosas Islas del Rosario.",
-    image: "/tour-5-islas-vip.jpeg",
+    image: "/tour-5-islas-vip.jpeg?v=2",
     duration: "",
     includes: [
       "Recogida en zona hotelera",
@@ -37,7 +37,7 @@ const tours = [
     id: "chiva",
     title: "CHIVA RUMBERA",
     description: "Visita los lugares mas emblematicos de Cartagena mientras te la pasas genial a bordo de nuestra increible chiva rumbera. Recorrido panoramico por Bocagrande, Laguito y la Bahia.",
-    image: "/tour-chiva-rumbera.jpeg",
+    image: "/tour-chiva-rumbera.jpeg?v=2",
     duration: "2 horas (7-9 PM o 9-11 PM)",
     includes: [
       "Recorrido en Chiva Rumbera",
@@ -55,7 +55,7 @@ const tours = [
     id: "getsemani",
     title: "TOUR GETSEMANI",
     description: "Recorre Getsemani, el barrio mas colorido de Cartagena y descubre su increible historia. Reconocido como el 4to mejor barrio del mundo por la revista Forbes.",
-    image: "/tour-getsemani.jpeg",
+    image: "/tour-getsemani.jpeg?v=2",
     duration: "1-2 horas",
     includes: [
       "Guia local profesional",
@@ -72,7 +72,7 @@ const tours = [
     id: "borabora",
     title: "BORA BORA BEACH CLUB",
     description: "Te mereces algo unico! Visita el mejor beach club de Cartagena y el Caribe. BORA BORA te espera con las mejores instalaciones y vistas al mar.",
-    image: "/tour-bora-bora-beach-club.jpeg",
+    image: "/tour-bora-bora-beach-club.jpeg?v=2",
     duration: "Hasta las 3:00 PM",
     includes: [
       "Transporte en lancha deportiva",
@@ -85,7 +85,7 @@ const tours = [
     id: "volcan-totumo",
     title: "VOLCAN DEL TOTUMO",
     description: "Disfruta la tranquilidad de sumergirte en este increíble spa natural, ¡El gran volcan del totumo te espera!",
-    image: "/volcan_totumo.JPG.jpeg",
+    image: "/volcan_totumo.JPG.jpeg?v=2",
     duration: "",
     includes: [
       "Recogida en Hotel",
@@ -103,7 +103,7 @@ const tours = [
     id: "atardecer-sibarita",
     title: "ATARDECER SIBARITA MASTER",
     description: "Disfruta tu aventura con el mágico atardecer por la bahía de Cartagena en el exclusivo sibarita Master",
-    image: "/atardecer.JPG.jpeg",
+    image: "/atardecer.JPG.jpeg?v=2",
     duration: "2 horas (Salida 5:00 PM)",
     includes: [
       "Salida - 5:00 PM",
@@ -116,7 +116,7 @@ const tours = [
     id: "city-tour",
     title: "CITY TOUR CARTAGENA",
     description: "Recorre los lugares mas emblemáticos de la ciudad y vive la historia detras de la Hermosa Cartagena",
-    image: "/city_tour_cartagena.JPG.jpeg",
+    image: "/city_tour_cartagena.JPG.jpeg?v=2",
     duration: "",
     includes: [
       "Recogida en el hotel",
@@ -135,7 +135,7 @@ const tours = [
     id: "ibbiza",
     title: "IBBIZA",
     description: "Un paraíso de aguas cristalinas en las islas del rosario que te hará vivir un día de confort, tranquilidad y aventuras. ¡Ibbiza te espera!",
-    image: "/ibbiza_tour.JPG.jpeg",
+    image: "/ibbiza_tour.JPG.jpeg?v=2",
     duration: "",
     includes: [
       "Transporte en bote deportivo",
@@ -148,7 +148,7 @@ const tours = [
     id: "isla-palma",
     title: "ISLA PALMA",
     description: "Te mereces lo mejor, ven y vive una experiencia única, en la isla mas exclusiva que encontraras en el caribe",
-    image: "/isla_palma.jpeg",
+    image: "/isla_palma.jpeg?v=2",
     duration: "",
     includes: [
       "Recogida en el hotel",
@@ -165,7 +165,7 @@ const tours = [
     id: "luxury",
     title: "LUXURY",
     description: "Vive un grandioso día de playa en islas del rosario, disfruta de este atractivo lugar con aguas cristalinas",
-    image: "/luxury.JPG.jpeg",
+    image: "/luxury.JPG.jpeg?v=2",
     duration: "",
     includes: [
       "Transporte en bote deportivo",
@@ -178,7 +178,7 @@ const tours = [
     id: "oceanario",
     title: "OCEANARIO",
     description: "Recorre las Islas del rosario, contempla sus hermosos paisajes, visita el oceanario y descubre la variedad marina que el caribe tiene para ti!",
-    image: "/oceanario.JPG.jpeg",
+    image: "/oceanario.JPG.jpeg?v=2",
     duration: "",
     includes: [
       "Recogida en Hotel",
@@ -192,7 +192,7 @@ const tours = [
     id: "rosario-del-mar",
     title: "ROSARIO DEL MAR",
     description: "Un rincón paradisíaco perfecto para desconectarte de la rutina, rodeado de aguas cristalinas y la mejor vibra que tu cuerpo necesita!",
-    image: "/rosario_mar.jpeg",
+    image: "/rosario_mar.jpeg?v=2",
     duration: "",
     includes: [
       "Transporte en bote deportivo",

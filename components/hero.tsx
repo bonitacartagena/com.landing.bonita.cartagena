@@ -3,15 +3,15 @@ import { Check } from "lucide-react";
 
 const heroImages = [
   {
-    src: "/1_1.png",
+    src: "/1_1.png?v=2",
     alt: "Playa tropical de aguas cristalinas en Cartagena de Indias",
   },
   {
-    src: "/1_2.png",
+    src: "/1_2.png?v=2",
     alt: "Turistas disfrutando una experiencia inolvidable en el Caribe colombiano",
   },
   {
-    src: "/1_3.png",
+    src: "/1_3.png?v=2",
     alt: "Palenqueras con trajes tradicionales y frutas tipicas en el centro historico de Cartagena",
   },
 ] as const;
@@ -44,7 +44,7 @@ export function Hero() {
           style={{ width: "18rem", height: "18rem" }}
         >
           <Image
-            src="/logo-bonita-cartagena.png"
+            src="/logo-bonita-cartagena.png?v=2"
             alt="Hermosa Cartagena Logo"
             width={512}
             height={512}

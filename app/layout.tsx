@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: 'https://bonitacartagena.com',
     images: [
       {
-        url: '/hero-islas-del-rosario.jpeg',
+        url: '/hero-islas-del-rosario.jpeg?v=2',
         width: 1200,
         height: 630,
         alt: 'Tours y pasadias en las Islas del Rosario, Cartagena de Indias',
@@ -64,7 +64,7 @@ const localBusinessSchema = {
   ],
   hasMap: 'https://maps.google.com/?q=Cartagena+de+Indias',
   priceRange: '$$',
-  image: 'https://bonitacartagena.com/logo-bonita-cartagena.png',
+  image: 'https://bonitacartagena.com/logo-bonita-cartagena.png?v=2',
   identifier: {
     '@type': 'PropertyValue',
     name: 'RNT',
