@@ -11,7 +11,7 @@ function TikTok({ className }: { className?: string }) {
 
 export function SocialLinks() {
   return (
-    <section className="flex flex-col items-center gap-4 py-6">
+    <section className="flex flex-col items-center gap-4 py-6 w-full max-w-sm md:max-w-4xl mx-auto px-4">
       <p className="w-full text-muted-foreground text-sm text-center leading-relaxed">
         Únete a nuestra comunidad de{" "}
         <strong className="text-white">+200.000 viajeros</strong>
