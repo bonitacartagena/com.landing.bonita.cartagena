@@ -11,30 +11,30 @@ import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 
 const beforeToursImages = [
   {
-    src: "/2_1.jpeg?v=2",
+    src: "/strip-playa-tropical-cartagena.jpeg?v=2",
     alt: "Playa tropical de aguas cristalinas en Cartagena de Indias",
   },
   {
-    src: "/2_2.png?v=2",
+    src: "/strip-turistas-caribe.png?v=2",
     alt: "Turistas disfrutando una experiencia inolvidable en el Caribe colombiano",
   },
   {
-    src: "/2_3.png?v=2",
+    src: "/strip-palenqueras-frutas.png?v=2",
     alt: "Palenqueras con trajes tradicionales y frutas tipicas en el centro historico de Cartagena",
   },
 ] as const;
 
 const afterToursImages = [
   {
-    src: "/3_1.jpeg?v=2",
+    src: "/strip-cultura-caribe-cartagena.jpeg?v=2",
     alt: "Cultura y arte del Caribe colombiano en Cartagena de Indias",
   },
   {
-    src: "/3_2.png?v=2",
+    src: "/strip-muralla-bahia-cartagena.jpeg?v=2",
     alt: "Vista iconica de la muralla y bahia de Cartagena de Indias",
   },
   {
-    src: "/3_3.jpeg?v=2",
+    src: "/strip-atractivos-turisticos-cartagena.jpeg?v=2",
     alt: "Visitantes explorando los atractivos turisticos de Cartagena",
   },
 ] as const;
@@ -88,15 +88,15 @@ const afterVideoImages = [
 
 const beforeTestimonialsImages = [
   {
-    src: "/4_1.png?v=2",
+    src: "/strip-playa-tropical-vista.png?v=2",
     alt: "Playa tropical de aguas cristalinas en Cartagena de Indias",
   },
   {
-    src: "/4_2.jpeg?v=2",
+    src: "/strip-turistas-inolvidable-cartagena.jpeg?v=2",
     alt: "Turistas disfrutando una experiencia inolvidable en el Caribe colombiano",
   },
   {
-    src: "/4_3.jpeg?v=2",
+    src: "/strip-palenqueras-centro-historico.jpeg?v=2",
     alt: "Palenqueras con trajes tradicionales y frutas tipicas en el centro historico de Cartagena",
   },
 ] as const;
