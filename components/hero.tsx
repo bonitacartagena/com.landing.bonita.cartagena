@@ -3,16 +3,16 @@ import { Check } from "lucide-react";
 
 const heroImages = [
   {
-    src: "/hero-islas-del-rosario.jpeg",
-    alt: "Turistas en lancha deportiva rumbo a las Islas del Rosario, Cartagena de Indias",
+    src: "/1_1.png",
+    alt: "Playa tropical de aguas cristalinas en Cartagena de Indias",
   },
   {
-    src: "/hero-isla-paradisiaca.png",
-    alt: "Isla paradisiaca de aguas turquesas en el Caribe colombiano",
+    src: "/1_2.png",
+    alt: "Turistas disfrutando una experiencia inolvidable en el Caribe colombiano",
   },
   {
-    src: "/hero-bora-bora-beach-club.jpeg",
-    alt: "Bora Bora Beach Club, el mejor beach club de Cartagena",
+    src: "/1_3.png",
+    alt: "Palenqueras con trajes tradicionales y frutas tipicas en el centro historico de Cartagena",
   },
 ] as const;
 
