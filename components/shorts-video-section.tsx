@@ -1,49 +1,18 @@
-'use client'
-
-import { useEffect, useRef } from "react"
-
-const VIDEO_ID = "yAgV-QQrDD8"
+const VIMEO_EMBED_URL =
+  "https://player.vimeo.com/video/1187092448?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&playsinline=1&title=0&byline=0&portrait=0"
 
 export function ShortsVideoSection() {
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-
-  useEffect(() => {
-    const iframe = iframeRef.current
-    if (!iframe) return
-
-    const play = () => {
-      iframe.contentWindow?.postMessage(
-        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
-        "https://www.youtube.com"
-      )
-    }
-
-    // Un único retry al cargar, por si el player aún no estaba listo
-    const handleLoad = () => window.setTimeout(play, 500)
-
-    // Reproducir cuando el usuario vuelve a la pestaña
-    const handleVisibility = () => { if (!document.hidden) play() }
-
-    iframe.addEventListener("load", handleLoad)
-    document.addEventListener("visibilitychange", handleVisibility)
-
-    return () => {
-      iframe.removeEventListener("load", handleLoad)
-      document.removeEventListener("visibilitychange", handleVisibility)
-    }
-  }, [])
-
   return (
-    <section className="w-full py-8 md:py-12">
-      <div className="mx-auto max-w-4xl px-4 md:px-8">
+    <section className="w-full py-8 md:py-12 flex justify-center">
+      <div className="w-full max-w-[830px] px-4 md:px-8">
         <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl">
-          <div className="relative aspect-[9/16] w-full">
+          <div className="relative w-full" style={{ paddingTop: '177.78%' }}>
             <iframe
-              ref={iframeRef}
-              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&playsinline=1&controls=0&rel=0&enablejsapi=1`}
-              title="Bonita Cartagena video"
-              className="absolute inset-0 h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              src={VIMEO_EMBED_URL}
+              title="Hermosa Cartagena video"
+              className="absolute inset-0 w-full h-full"
+              style={{ width: '100%', height: '100%', border: 'none' }}
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               loading="eager"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen

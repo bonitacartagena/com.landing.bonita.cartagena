@@ -54,6 +54,48 @@ const testimonials = [
     rating: 5,
     text: "Muito obrigado pela atenção, divertimo-nos imenso nos passeios; o passeio VIP das 5 ilhas é o máximo 🤗🥳",
     avatar: "C"
+  },
+  {
+    name: "Joseph",
+    location: "New York, USA",
+    rating: 5,
+    text: "Amazing. I highly recommend it—100%! Our guide was very friendly and spoke English well. Everything was very well organized. Spectacular places—I loved it! The food was already ready when we arrived. No waiting at all.",
+    avatar: "J"
+  },
+  {
+    name: "Klarida",
+    location: "Italia",
+    rating: 5,
+    text: "Adoriamo Cartagena, in Colombia. In pochi giorni abbiamo potuto fare cose meravigliose. Tutto è stupendo: la gente, le attrazioni, Getsemaní… tutto è bellissimo.",
+    avatar: "K"
+  },
+  {
+    name: "Rebeca",
+    location: "Limón, Costa Rica",
+    rating: 5,
+    text: "Espectacular. Que beach club tan top! La playa de isla del encanto está super chic y todo el lugar es espectacular. Te sientes como si estuvieras en el paraiso. Volvería mil veces!",
+    avatar: "R"
+  },
+  {
+    name: "Fabiane",
+    location: "Sao Paulo",
+    rating: 5,
+    text: "Ilha de palma 🌴 Foi perfeito, que lugar incrível eu ameiii❤️",
+    avatar: "F"
+  },
+  {
+    name: "Nicolás",
+    location: "Santiago, Chile",
+    rating: 5,
+    text: "Buenas buenas, como astán???queria agradecerles por todo...pasamos barbaro en los tours y los paseos a las islas super chevere jejeje,hasta la proxima 🫶🏼, esperamos volver pronto , nos encantó Cartagena",
+    avatar: "N"
+  },
+  {
+    name: "Carmen",
+    location: "México, Querétaro",
+    rating: 5,
+    text: "Gracias al equipo de Bonitacartagena por todas sus atenciones todo estuvo padrísimo💙",
+    avatar: "C"
   }
 ]
 
