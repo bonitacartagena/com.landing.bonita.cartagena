@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Star } from "lucide-react"
 
 import {
   type CarouselApi,
@@ -258,8 +259,9 @@ export function ToursSection() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripSchema) }}
       />
-      <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-12">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-foreground mb-8 md:mb-12 flex items-center justify-center gap-2">
         Tours Destacados
+        <Star className="w-6 h-6 md:w-8 md:h-8 fill-current" />
       </h2>
       <Carousel
         setApi={setApi}
