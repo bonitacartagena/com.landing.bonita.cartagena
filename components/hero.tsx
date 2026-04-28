@@ -41,7 +41,7 @@ export function Hero() {
 
         <div
           className="absolute left-1/2 top-full -translate-x-1/2 -translate-y-1/2 z-30 md:w-[26rem] md:h-[26rem] lg:w-[34rem] lg:h-[34rem]"
-          style={{ width: "18rem", height: "18rem" }}
+          style={{ width: "14rem", height: "14rem" }}
         >
           <Image
             src="/logo-bonita-cartagena.png?v=2"

@@ -48,11 +48,12 @@ export function TestimonialPhotoSlider({
   return (
     <section className={`w-full px-4 md:px-8 lg:px-16 ${className}`.trim()}>
       <div className="mx-auto max-w-7xl">
-        <div className="mb-6 md:mb-8">
+       <div className="mb-6 md:mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-teal-400">
+           Quienes ya lo vivieron lo confirman🥳
+          </p>
           <h2 className="mt-2 text-2xl font-bold text-foreground md:text-4xl">
-            Quienes ya lo vivieron lo confirman🥳
-            <br />
-            ahora es tu momento…. Reserva ya y vive la experiencia😎🌴
+           ahora es tu momento…. Reserva ya y vive la experiencia😎🌴
           </h2>
         </div>
 

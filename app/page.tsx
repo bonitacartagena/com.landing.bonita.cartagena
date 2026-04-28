@@ -106,7 +106,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-background">
       <Hero />
 
-      <div className="py-8 md:py-12">
+      <div className="pb-8 md:py-12">
         <CTAButtons />
       </div>
 
